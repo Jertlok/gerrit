@@ -126,17 +126,17 @@ public class ReviewerAdder {
 
   public static Optional<InternalAddReviewerInput> newAddReviewerInputFromCommitIdentity(
       Change change, @Nullable Account.Id accountId, NotifyHandling notify) {
-    if (accountId == null || accountId.equals(change.getOwner())) {
-      // If git ident couldn't be resolved to a user, or if it's not forged, do nothing.
+    // if (accountId == null || accountId.equals(change.getOwner())) {
+    //   // If git ident couldn't be resolved to a user, or if it's not forged, do nothing.
       return Optional.empty();
-    }
+    // }
 
-    InternalAddReviewerInput in = new InternalAddReviewerInput();
-    in.reviewer = accountId.toString();
-    in.state = REVIEWER;
-    in.notify = notify;
-    in.otherFailureBehavior = FailureBehavior.IGNORE;
-    return Optional.of(in);
+    // InternalAddReviewerInput in = new InternalAddReviewerInput();
+    // in.reviewer = accountId.toString();
+    // in.state = REVIEWER;
+    // in.notify = notify;
+    // in.otherFailureBehavior = FailureBehavior.IGNORE;
+    // return Optional.of(in);
   }
 
   private final AccountResolver accountResolver;
